@@ -17,7 +17,12 @@ public class EasyLevelStreamExample {
                 .map(String::toUpperCase).collect(Collectors.toList());
     }
 
-
+    //Remove Duplicates
+   // List<Integer> nums = Arrays.asList(1, 2, 2, 3, 4, 4, 5);
+   public List<Integer> removeDuplicates(List<Integer> input){
+        return input.stream()
+                .distinct().collect(Collectors.toList());
+   }
 
 
     public static void main(String[] args) {
@@ -26,15 +31,17 @@ public class EasyLevelStreamExample {
         for(Integer i : new EasyLevelStreamExample().filterEvenNumbers(numbers)){
             System.out.print(i+" ");
         }
-
+        System.out.println("");
         //2. Uppercase
         List<String> names = Arrays.asList("john", "jane", "doe");
         for(String s : new EasyLevelStreamExample().upperCaseList(names)){
-            System.out.println(s+" ");
+            System.out.print(s+" ");
         }
-
-        //3. Find Max and Min in List
-        List<Integer> nums = Arrays.asList(10, 25, 3, 8, 15);
+        System.out.println("");
+        List<Integer> duplicateNumberList = Arrays.asList(1,1,2,2,3,3,4,5,6,7);
+        for(Integer i:new EasyLevelStreamExample().removeDuplicates(duplicateNumberList)){
+            System.out.print(i+" ");
+        }
 
 
 

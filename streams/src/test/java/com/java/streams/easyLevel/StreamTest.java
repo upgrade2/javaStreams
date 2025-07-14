@@ -26,6 +26,12 @@ public class StreamTest {
         assertEquals(expected,result);
     }
 
-
+    @Test
+    public void testRemoveDuplicates(){
+        List<Integer> input = Arrays.asList(1,2,3,4,5,6,7,8);
+        List<Integer> expected = Arrays.asList(1,2,3,4,5,6,7,8);
+        List<Integer> result = new EasyLevelStreamExample().removeDuplicates(input);
+        assertEquals(expected,result);
+    }
 
 }
