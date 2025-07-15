@@ -46,38 +46,14 @@ public class EasyLevelStreamExample {
     }
 
 
-    public static void main(String[] args) {
-        //1. Even Numbers filter
-        List<Integer> numbers = Arrays.asList(1,2,3,4,5,6,7,8,9,10);
-        for(Integer i : new EasyLevelStreamExample().filterEvenNumbers(numbers)){
-            System.out.print(i+" ");
-        }
-        System.out.println("");
-        //2. Uppercase
-        List<String> names = Arrays.asList("john", "jane", "doe");
-        for(String s : new EasyLevelStreamExample().upperCaseList(names)){
-            System.out.print(s+" ");
-        }
-        System.out.println("");
-        //3. Remove Duplicates
-        List<Integer> duplicateNumberList = Arrays.asList(1,1,2,2,3,3,4,5,6,7);
-        for(Integer i:new EasyLevelStreamExample().removeDuplicates(duplicateNumberList)){
-            System.out.print(i+" ");
-        }
-        System.out.println("");
-        //4. Sum of Even
-        System.out.println(" Sum of Even numbers :"+new EasyLevelStreamExample().sumOfEvenNumbers(duplicateNumberList));
-
-
-
-    }
-
+    // 5. Square each number
     public List<Integer> squareEachNumber(List<Integer> input) {
         return input.stream()
                 .map(i->i*i)
                 .collect(Collectors.toList());
     }
 
+    // 6. Find average
     public Double findAverage(List<Integer> input) {
       return input.stream()
                 .mapToInt(Integer::intValue)
