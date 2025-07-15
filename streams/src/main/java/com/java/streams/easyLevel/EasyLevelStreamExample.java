@@ -71,4 +71,16 @@ public class EasyLevelStreamExample {
 
 
     }
+
+    public List<Integer> squareEachNumber(List<Integer> input) {
+        return input.stream()
+                .map(i->i*i)
+                .collect(Collectors.toList());
+    }
+
+    public Double findAverage(List<Integer> input) {
+      return input.stream()
+                .mapToInt(Integer::intValue)
+                .average().orElse(0.0);
+    }
 }

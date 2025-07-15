@@ -53,4 +53,20 @@ public class StreamTest {
         assertEquals(expected,result);
     }
 
+    @Test
+    public void testSquareEachNumber(){
+        List<Integer> input = Arrays.asList(1,2,3,4,5,6);
+        List<Integer> expected = Arrays.asList(1,4,9,16,25,36);
+        List<Integer> result = new EasyLevelStreamExample().squareEachNumber(input);
+        assertEquals(expected,result);
+    }
+
+    @Test
+    public void testFindAverage(){
+        List<Integer> input = Arrays.asList(10, 20, 30);
+        Double expected = 20.0;
+        Double result = new EasyLevelStreamExample().findAverage(input);
+        assertEquals(expected,result);
+    }
+
 }
