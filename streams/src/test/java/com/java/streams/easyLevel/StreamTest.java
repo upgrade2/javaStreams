@@ -1,10 +1,8 @@
 package com.java.streams.easyLevel;
 
 import org.junit.jupiter.api.Test;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -18,7 +16,6 @@ public class StreamTest {
         List<Integer> result = new EasyLevelStreamExample().filterEvenNumbers(input);
         assertEquals(expected,result);
     }
-
 
     @Test
     public void testToUpperCase() {
@@ -75,9 +72,41 @@ public class StreamTest {
         List<Integer> even = Arrays.asList(2,4,6,8,10);
         List<Integer> odd = Arrays.asList(1,3,5,7,9);
         Map<Boolean,List<Integer>> result = new EasyLevelStreamExample().partition(input);
-        
+
         assertEquals(even,result.get(true));
         assertEquals(odd,result.get(false));
     }
 
+    @Test
+    public void testGetTopNElements(){
+        List<Integer> input =Arrays.asList(1,2,3,4,5,6,7,8,9,10);
+        List<Integer> expected =Arrays.asList(10,9,8,7);
+        Integer n = 4;
+        List<Integer> result = new EasyLevelStreamExample().getTopNElement(input,n);
+        assertEquals(expected,result);
+
+    }
+    @Test
+    public void emptyTestGetTopNElements(){
+        List<Integer> input = Collections.emptyList();
+        List<Integer> expected =Collections.emptyList();
+        Integer n = 4;
+        List<Integer> result = new EasyLevelStreamExample().getTopNElement(input,n);
+        assertEquals(expected,result);
+
+    }
+
+    @Test
+    public void testMultiplyAllElements(){
+        List<Integer> input = Arrays.asList(2, 3, 6);
+        int expected = 36;
+        assertEquals(expected,new EasyLevelStreamExample().multiplyAllElements(input));
+    }
+
+    @Test
+    public void testCountPositiveIntegers(){
+        List<Integer> input = Arrays.asList(-1, 2, -3, 4, 5);
+        long expected =3;
+        assertEquals(expected,new EasyLevelStreamExample().countPositiveIntegers(input));
+    }
 }

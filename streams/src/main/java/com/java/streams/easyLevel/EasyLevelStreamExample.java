@@ -60,8 +60,31 @@ public class EasyLevelStreamExample {
                 .average().orElse(0.0);
     }
 
+    //7. Partitions
     public Map<Boolean, List<Integer>> partition(List<Integer> input) {
         return input.stream()
                 .collect(Collectors.partitioningBy(i->i%2==0));
     }
+
+    //8.getTopNumbers
+    public List<Integer> getTopNElement(List<Integer> input,Integer n){
+        return input.stream()
+                .sorted(Comparator.reverseOrder())
+                .limit(n)
+                .collect(Collectors.toList());
+    }
+
+    //9. Multiply all elements
+    public Integer multiplyAllElements(List<Integer> input){
+        return input.stream()
+                .reduce(1,(a,b)->a*b);
+    }
+
+    //10. Count positive
+    public long countPositiveIntegers(List<Integer> input){
+        return input.stream()
+                .filter(i->i>0)
+                .count();
+    }
+
 }
