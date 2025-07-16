@@ -59,4 +59,17 @@ public class EasyLevelStreamExample {
                 .mapToInt(Integer::intValue)
                 .average().orElse(0.0);
     }
+
+    public Map<Boolean, List<Integer>> partition(List<Integer> input) {
+       List<Integer> even= input.stream()
+               .filter(i->i%2==0)
+               .collect(Collectors.toList());
+        List<Integer> odd= input.stream()
+                .filter(i->i%2!=0)
+                .collect(Collectors.toList());
+        Map<Boolean, List<Integer>> result = new HashMap<>(2);
+        result.put(true,even);
+        result.put(false,odd);
+        return result;
+    }
 }
