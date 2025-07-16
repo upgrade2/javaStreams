@@ -74,11 +74,10 @@ public class StreamTest {
         List<Integer> input =Arrays.asList(1,2,3,4,5,6,7,8,9,10);
         List<Integer> even = Arrays.asList(2,4,6,8,10);
         List<Integer> odd = Arrays.asList(1,3,5,7,9);
-        Map<Boolean,List<Integer>> expected = new HashMap<>();
-        expected.put(true,even);
-        expected.put(false,odd);
-        assertEquals(expected,new EasyLevelStreamExample().partition(input));
-
+        Map<Boolean,List<Integer>> result = new EasyLevelStreamExample().partition(input);
+        
+        assertEquals(even,result.get(true));
+        assertEquals(odd,result.get(false));
     }
 
 }
